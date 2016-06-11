@@ -23,12 +23,14 @@ module.exports = {
       test: /\.js$/,
       loaders: ['react-hot', 'babel'],
       include: path.resolve("src")
-    }]
+    }].concat(config.module.loaders)
   },
 
+
+
   // Подключаю source-map для дебага
-  // "inline-source-map" - вкомпиливается в билд (использовать на dev);
+   devtool: "inline-source-map" // вкомпиливается в билд (использовать на dev);
   // "source-map" - создаётся отдельным файлом в папке билда (использовать на prod)
-  devtool: 'eval'
+  //devtool: 'eval'
 
 };

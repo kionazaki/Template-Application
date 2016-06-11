@@ -31,7 +31,7 @@ module.exports = {
       test: /\.js$/,
       loaders: ['babel'],
       include: path.resolve("src")
-    }]
+    }].concat(config.module.loaders)
   }
 
 };
