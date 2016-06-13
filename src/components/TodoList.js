@@ -22,13 +22,7 @@ export class TodoList extends React.Component {
   };
 */
 
-    componentDidUpdate(){
-        this.props.itemList.forEach( (item, index)=>{
-            if (item.editMode === true){
-                ReactDOM.findDOMNode(this.refs['todo_item_'+index]).focus();
-            }
-        });
-    }
+
 
 
     render() {
@@ -53,54 +47,11 @@ export class TodoList extends React.Component {
 
 
 
-
+            item.index = index;
             return (
 
 
-
-            <li key = {index} className={liClass} onDoubleClick = { () => {startEdit(index)} }>
-                    <div className="view">
-                        <input
-                            className="toggle"
-                            type="checkbox"
-                            checked={item.checked}
-                            onChange = {
-                                () => {setCheckbox(index)}} />
-                        <label>{item.label}</label>
-                        <button
-                            className = "destroy"
-                            onClick={
-                                () => {destroy(index)}} >
-                        </button>
-                    </div>
-                    <input
-
-                        className="edit"
-                        value={item.label}
-                        onBlur = {
-                            ()=>{stopEdit(index)}}
-                        onChange = {
-                            (e) => {
-                                setLabel({
-                                    index: index,
-                                    label: e.target.value})}}
-
-
-                        onKeyDown = {
-                            (e) => {
-                                if (e.key === "Enter") {
-                                    stopEdit(index);
-                                }
-
-                                    }}
-
-
-
-
-                        ref = {"todo_item_"+index}
-                        />
-                </li>
-
+                <TodoItem key={index} {...item}  />
             )
         });
 

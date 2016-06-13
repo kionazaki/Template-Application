@@ -31,16 +31,14 @@ const TodoListReducer$ = Rx.Observable.merge(
             item.editMode = false;
             return state}),
 
-    // setLabel
-    TodoListActions.setLabel$
+    // keyFlow
+    TodoListActions.keyFlow$
+        .debounceTime(1000)
         .map(obj =>
                 state => {
             let item = state.todos.items[obj.index];
             item.label = obj.label;
             return state})
-
-
-
 );
 
 export default TodoListReducer$;

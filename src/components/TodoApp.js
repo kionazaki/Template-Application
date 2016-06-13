@@ -6,34 +6,10 @@ import TodoList from "app/components/TodoList";
 //import CounterActions from "app/actions/CounterActions";
 
 export class TodoApp extends React.Component {
- /* static propTypes = {
-    counter: React.PropTypes.number.isRequired,
-    increment: React.PropTypes.func.isRequired,
-    decrement: React.PropTypes.func.isRequired
-
-  };
-*/
-
   render() {
-
-      var newsTemplate = this.props.items.map(function(item, index) {
-          return (
-              <li key = {index} className="completed">
-                  <div className="view">
-                      <input className="toggle" type="checkbox" checked=""/>
-                      <label>{item.label}</label>
-                      <button className="destroy"></button>
-                  </div>
-                  <input className="edit" value="{item.label}"/>
-              </li>
-          )
-      });
-
-
-
       return (
-
-        <section className="todoapp">
+      <div>
+      <section className="todoapp">
             <div>
                 <header className="header">
                     <h1>todos</h1>
@@ -43,7 +19,6 @@ export class TodoApp extends React.Component {
                     <input className="toggle-all" type="checkbox"/>
                     <TodoList/>
                 </section>
-
                 <footer className="footer">
                     <span className="todo-count">
                         <strong>2</strong>
@@ -51,7 +26,6 @@ export class TodoApp extends React.Component {
                         <span>items</span>
                         <span> left</span>
                     </span>
-
                     <ul className="filters">
                         <li>
                             <a href="#/" className="selected">All</a>
@@ -69,14 +43,16 @@ export class TodoApp extends React.Component {
                 </footer>
             </div>
         </section>
+          <footer className="info">
+              <p>Double-click to edit a todo</p>
+              <p>Created by <a href="https://github.com/kionazaki">Nazaki</a></p>
+              <p>Motivated by <a href="http://todomvc.com">TodoMVC</a></p>
+          </footer>
+          </div>
     );
   }
 }
 
 export default connect(state$, state => ({
     items: state.todos.items
-/*  counter: state.counter,
-  increment: bindAction(CounterActions.increment$),
-  decrement: bindAction(CounterActions.decrement$)
-*/
 }))(TodoApp);
