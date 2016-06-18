@@ -1,12 +1,11 @@
 import React from "react";
-import TodoApp from "app/components/TodoApp";
-
+import TodoApp from "app/components/TodoApp/TodoApp";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoApp/>
+        <TodoApp {...this.props}/>
       </div>
     );
   }
