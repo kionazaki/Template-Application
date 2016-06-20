@@ -6,7 +6,8 @@ import state$ from "app/state";
 
 require("./css/index.css");
 
-//ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
-state$.subscribe( r => ReactDOM.render(<App {...r} />, document.getElementById("root")) );
+//state$.subscribe( r => ReactDOM.render(<App {...r} />, document.getElementById("root")) );
+
 

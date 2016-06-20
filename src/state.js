@@ -13,8 +13,9 @@ const initialState$ = Rx.Observable.of({
   counter: 0,
   todos: {
     toggleAll: false,
+    newTodoValue: '',
     items: [
-      {label: 'тестовая HALLO запись', checked: true, restoreLabel: ''},
+               {label: 'тестовая HALLO запись', checked: true, restoreLabel: ''},
       {label: 'тестовая запись2', checked: false, restoreLabel: ''},
       {label: 'И еще что-то', checked: false, restoreLabel: ''},
       {label: 'Сегодня всё получается медленно', checked: false, restoreLabel: ''},

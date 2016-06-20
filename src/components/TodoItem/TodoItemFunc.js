@@ -11,8 +11,10 @@ var sendCommand = {
     },
 
     startingItemEditing: function(state, pars){
-        let item = state.todos.items[pars.index];
-        item.restoreLabel = item.label;
+        if (pars.event.target.className !== 'toggle') {
+            let item = state.todos.items[pars.index];
+            item.restoreLabel = item.label;
+        }
         return state;
     },
 

@@ -4,8 +4,7 @@ import classNames from "classnames";
 import dispatcher$ from "app/dispatcher";
 import sendCommand from "app/library/sendCommand"
 
-export class TodoItem extends React.Component {
-
+class TodoItem extends React.Component {
     static propTypes = {
         label: React.PropTypes.string.isRequired,
         checked: React.PropTypes.bool.isRequired,
@@ -25,6 +24,7 @@ export class TodoItem extends React.Component {
         return r;
     }
 
+    // ¬ режиме редактировани€ - фокусируемс€
     componentDidUpdate(){
         var index = this.props.index;
         if (!!this.props.restoreLabel){
@@ -44,15 +44,13 @@ export class TodoItem extends React.Component {
         return (
             <li
                 className = {liClass}
-                onDoubleClick =  {() => sendCommand(name, 'startingItemEditing', {index: index})} >
-
+                onDoubleClick =  {(e) => sendCommand(name, 'startingItemEditing', {index: index, event: e})} >
                 <div className="view">
                     <input
                         className = "toggle"
                         type = "checkbox"
                         checked = {this.props.checked}
                         onChange = {() => sendCommand(name, 'changeItemCheckbox', {index: index})} />
-
                     <label>{label}</label>
                     <button
                         className = "destroy"

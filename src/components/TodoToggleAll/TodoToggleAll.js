@@ -2,7 +2,7 @@ import React from "react";
 import dispatcher$ from "app/dispatcher";
 import sendCommand from "app/library/sendCommand"
 
-export class TodoToggleAll extends React.Component {
+class TodoToggleAll extends React.Component {
 
     static propTypes = {
         toggleAll: React.PropTypes.bool.isRequired
