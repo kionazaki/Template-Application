@@ -63,7 +63,13 @@ class TodoItem extends React.Component {
                     value = {label}
                     onBlur  = {() => sendCommand(name, 'stoppingItemEditing', {index: index})}
                     onChange = {(e) => sendCommand(name, 'setItemLabel', { index: index, label: e.target.value})}
-                    onKeyDown = {(e) => sendCommand(name, 'itemKeyDown', { index: index, key: e.key})} />
+                    onKeyDown = {
+                        (e) => {
+                            if ( ['Enter','Escape'].indexOf(e.key)  !== -1 ) {
+                                sendCommand(name, 'itemKeyDown', {index: index, key: e.key})
+                            }
+                        }
+                    } />
             </li>
         );
     }

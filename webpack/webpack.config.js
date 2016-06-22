@@ -41,13 +41,13 @@ config = {
 
   plugins: [
     // Добавляет index.html в билд.
-    // Причем сам подключает build.css (который готовися в ExtractTextPlugin) и build.js
+    // Причем сам подключает app.css (который готовися в ExtractTextPlugin) и app.js
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
       minify: { collapseWhitespace: true } // минификация HTML (убирает лишние пробелы)
     }),
     // Собирает весь текст CSS в билд
-    new ExtractTextPlugin('build.css')
+    new ExtractTextPlugin('app.css')
   ]
 
 

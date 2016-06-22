@@ -22,7 +22,6 @@ class TodoApp extends React.Component{
             pathName: this.props.location.pathname
         };
 
-        const count = this.props.todos.items.filter(()=>true).length;
         const itemsExists = this.props.todos.items.some((item)=>!!item.label);
 
         return (

@@ -6,7 +6,7 @@ var sendCommand = {
     },
 
     addNewItem: function (state, pars){
-        if (pars.key === "Enter" && pars.target.value !== '' ){
+        if (pars.target.value !== '' ){
             const item = {
                 label: pars.target.value,
                 checked: false,

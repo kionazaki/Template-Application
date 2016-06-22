@@ -16,7 +16,13 @@ class TodoHeader extends React.Component {
                     placeholder="What needs to be done?"
                     value={this.props.newTodoValue}
                     onChange = {(e) => sendCommand(name, 'setNewTodo', {newTodoValue: e.target.value})}
-                    onKeyDown = {(e) => sendCommand(name, 'addNewItem', e)} />
+                    onKeyDown = {
+                        (e) => {
+                            if (e.key === "Enter") {
+                                sendCommand(name, 'addNewItem', e)
+                            }
+                        }
+                    } />
             </header>
         );
     }

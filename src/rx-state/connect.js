@@ -4,7 +4,7 @@ function connect(state$) {
   return function wrapWithConnect(WrappedComponent) {
     return class Connect extends React.Component {
       componentWillMount() {
-        this.subscription = state$.subscribe(r=>this.setState(r));
+        this.subscription = state$.subscribe(r=>{this.setState(r)});
       }
 
       componentWillUnmount() {
