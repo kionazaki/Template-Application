@@ -18,9 +18,12 @@ var TodoToggleAll = {
             });
         }
         return state;
-    }
+    },
 
 
+    xxx: function(t){
+    return t*t;
+}
 
     
 };
