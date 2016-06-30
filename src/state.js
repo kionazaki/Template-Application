@@ -1,16 +1,12 @@
 import Rx from "rxjs";
 import createState from "app/rx-state/createState";
-import todoReducer$ from "app/reducers/todoReducer";
 import automation from "app/rx-state/automation";
 import currentState from "app/rx-state/currentState";
-
-// Здесь в перспективе будут собираться reducer-ы всех компонентов
-const reducer$ = Rx.Observable.merge(
-  todoReducer$
-);
+import reducer$ from "app/rx-state/reducer";
 
 // Создание потока состояния
 const initialState$ = Rx.Observable.of(currentState);
+
 var state$ = automation(createState(reducer$, initialState$));
 
 //Сохраняем все текущие состояния в localStorage

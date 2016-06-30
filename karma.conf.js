@@ -3,6 +3,17 @@
 var webpackConfig = require("./webpack/webpack.prod.config.js");
 
 
+// Подключаем этот лоадер, чтобы заработал репорт покрытия istanbul
+webpackConfig.devtool = "inline-source-map";
+webpackConfig.module.loaders = [
+  { test: /\.js$/, exclude: [/node_modules/, /\.spec.js$/], loader: "babel-istanbul" }
+].concat(webpackConfig.module.loaders);
+
+
+
+
+
+
 module.exports = function(config) {
   config.set({
 

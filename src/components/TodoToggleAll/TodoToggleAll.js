@@ -15,7 +15,7 @@ class TodoToggleAll extends React.Component {
                 className="toggle-all"
                 type="checkbox"
                 checked={this.props.toggleAll}
-                onChange = {(e) => sendCommand(name, 'toggleAll',{})} />
+                onChange = {() => sendCommand(name, 'toggleAll',{})} />
         );
     }
 }
