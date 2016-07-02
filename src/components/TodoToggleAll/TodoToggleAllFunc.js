@@ -1,8 +1,6 @@
 import TodoItemFunc from "app/components/TodoItem/TodoItemFunc";
 
 var TodoToggleAll = {
-
-
     toggleAll: function(state) {
         if (state.todos.toggleAll){
             state.todos.items.forEach((item, index)=>{
@@ -18,16 +16,7 @@ var TodoToggleAll = {
             });
         }
         return state;
-    },
-
-
-    xxx: function(t){
-    return t*t;
-}
-
-    
+    }
 };
-
-
 
 export default TodoToggleAll;

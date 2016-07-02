@@ -1,18 +1,13 @@
 import Rx from "rxjs";
+import toggleAll from "app/automations/toggleAll";
 
-function toggleAll(state){
-    var toggleAll = true;
-    state.todos.items.forEach((item)=>{
-        if (!item.checked){
-            toggleAll = false;
-        }
-    });
-    state.todos.toggleAll = toggleAll;
+function foo(state){
     return state;
 }
 
 function automation(state$) {
    return state$
+       .map(r=>foo(r))
        .map(r=>toggleAll(r));
 }
 

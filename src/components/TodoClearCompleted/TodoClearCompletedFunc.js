@@ -1,6 +1,6 @@
 import TodoItemFunc from "app/components/TodoItem/TodoItemFunc";
 
-var TodoClearCompleted = {
+var TodoClearCompletedFunc = {
 
     clearCompleted: function(state){
         state.todos.items.forEach((item, index)=>{
@@ -10,8 +10,7 @@ var TodoClearCompleted = {
         });
         return state;
     }
+
 };
 
-
-
-export default TodoClearCompleted;
+export default TodoClearCompletedFunc;

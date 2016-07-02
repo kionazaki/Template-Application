@@ -1,4 +1,4 @@
-var sendCommand = {
+var TodoHeaderFunc = {
 
     setNewTodo: function (state, pars){
         state.todos.newTodoValue = pars.newTodoValue;
@@ -18,9 +18,6 @@ var sendCommand = {
         return state;
     }
 
-    
 };
 
-
-
-export default sendCommand;
+export default TodoHeaderFunc;

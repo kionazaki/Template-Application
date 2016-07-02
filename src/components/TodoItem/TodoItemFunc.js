@@ -1,4 +1,4 @@
-var sendCommand = {
+var TodoItemFunc = {
     changeItemCheckbox: function (state, pars){
         let item = state.todos.items[pars.index];
         item.checked = !item.checked;
@@ -65,11 +65,6 @@ var sendCommand = {
         return state;
     }
 
-
-
-    
 };
 
-
-
-export default sendCommand;
+export default TodoItemFunc;
