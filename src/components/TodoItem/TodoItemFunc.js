@@ -46,23 +46,6 @@ var TodoItemFunc = {
          item.label = item.restoreLabel;
          this.stoppingItemEditing(state, {index: pars.index});
          return state;
-    },
-
-    toggleAll: function(state) {
-        if (state.todos.toggleAll){
-            state.todos.items.forEach((item, index)=>{
-                if (item.checked){
-                    this.changeItemCheckbox(state, {index: index})
-                }
-            });
-        } else {
-            state.todos.items.forEach((item, index)=>{
-                if (!item.checked){
-                    this.changeItemCheckbox(state, {index: index})
-                }
-            });
-        }
-        return state;
     }
 
 };

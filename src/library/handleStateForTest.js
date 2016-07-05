@@ -60,7 +60,7 @@ function addDeleted(objA, objB){
     var tmp;
     for (let key in objA){
         if (objA.hasOwnProperty(key)){
-            if (objB[key] === undefined){
+            if (objB[key] === undefined || ( Object.prototype.toString.call(objB) === '[object Array]' &&  objB[key] === null) ){
                 acc = newObj(acc, objA);
                 acc[key] = '__deleted';
             }
@@ -152,7 +152,8 @@ function getResult(tSet){
 
 var handleStateForTest = {
     compare: compare,
-    getResult: getResult
+    getResult: getResult,
+    cloneState: cloneState
 };
 
 
